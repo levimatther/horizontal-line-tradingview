@@ -1,0 +1,11 @@
+//@version=5
+indicator("Horizontal Line", overlay = true)
+lookbackInput = input.int(50, "Lookback in bars", minval = 1, maxval = 100)
+var num = int(na)
+for i = 1 to lookbackInput
+    if low[i] == low
+        l = line.new(bar_index, low, bar_index[i], low[i], width = 1, color = color.green)
+        line.delete(l[1])           
+
+
+
